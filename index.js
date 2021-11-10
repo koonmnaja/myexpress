@@ -34,6 +34,7 @@ app.post('/webhook', line.middleware(config), (req, res) => {
 });
 
 async function handleEvent(event) {
+    
     if (event.type !== 'message' || event.message.type !== 'text') {
         return Promise.resolve(null);
     }
